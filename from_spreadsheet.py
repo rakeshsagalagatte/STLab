@@ -15,4 +15,3 @@ for i in range(len(L)):
 
 df = pd.DataFrame(toUpdate, columns=['sl','Name' , 'USN' , 'Test_1', 'Test_2', 'Test_3'])
 df.to_excel('toUpdate.xlsx')
-print(L)
