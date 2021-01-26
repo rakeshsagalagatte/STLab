@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<h1 style="text-align: center;">Finding GCD of two numbers</h1>
+<body style="text-align: center;">
+    <form >
+        Number 1 : <input id='n1' type="number" > <br> <p>
+
+        </p>
+        Number 2 : <input id = 'n2' type="number">
+        <p>
+
+        </p>
+        <input type="button" id="submit" value="SUBMIT" style="height: 40px;width: 200px;" onclick="gcdOfNumber()" >
+        <input id="answer" value="">
+    </form>
+
+    <script>
+
+        function clear_data(){
+	        document.getElementById("n1").value = "";
+            document.getElementById("n2").value = "";
+	        document.getElementById("answer").value = "";
+    	}
+
+        function gcdOfNumber(){
+            let a = parseInt(document.getElementById("n1").value);
+            let b = parseInt(document.getElementById("n2").value);
+            
+	        if(!Number.isInteger(a) || !Number.isInteger(b) || a==0 || b==0){
+		        alert("Invalid Inputs");
+		        clear_data();
+                return;
+	        } 
+            if(a < 0)
+               a = -a;
+            if(b < 0)
+                b = -b;
+            while(b){
+                var temp = b;
+                b = a % b;
+                a = temp;
+            
+	         }
+	
+            document.getElementById('answer').value = a.toString();
+        }
+    </script>
+</body>
+</html>
